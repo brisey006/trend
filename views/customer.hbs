@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<!-- Head -->
+	<head>
+		<title>Trending</title>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../assets/trend.png">
+
+		<!--  Social tags -->
+    <meta name="keywords" content="Trending Dash">
+    <meta name="description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta name="author" content="trendingzw.com">
+
+    <!-- Schema.org -->
+    <meta itemprop="name" content="Trending Dashboard UI Kit">
+    <meta itemprop="description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta itemprop="image" content="assets/img/sduik-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@trending">
+    <meta name="twitter:title" content="Trending Dashboard UI Kit">
+    <meta name="twitter:description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta name="twitter:creator" content="@trending">
+    <meta name="twitter:image" content="assets/img/sduik-preview.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Trending">
+    <meta property="og:title" content="Trending Dashboard UI Kit">
+    <meta property="og:description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta property="og:url" content="https://trendingzw.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="assets/img/sduik-preview.png">
+    <meta property="og:image:secure_url" content="assets/img/sduik-preview.png">
+
+    <!-- Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+		<!-- Components Vendor Styles -->
+	  <link rel="stylesheet" href="../../assets/assets/vendor/font-awesome/css/all.min.css">
+		<link rel="stylesheet" href="../../assets/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="../../assets/assets/css/theme.css">
+
+		<!-- Custom Charts -->
+		<style>
+			.js-doughnut-chart {
+				width: 70px !important;
+				height: 70px !important;
+			}
+		</style>
+	</head>
+	<!-- End Head -->
+
+	<body>
+		<!-- Header (Topbar) -->
+		<header class="u-header">
+			<div class="u-header-left">
+				<a class="u-header-logo" href="/">
+					<img class="u-logo-desktop" src="../../assets/trend.png" width="40" height="40" alt="Trending Dashboard">
+					<img class="img-fluid u-logo-mobile" src="../../assets/trend.png" width="50" alt="Trending Dashboard">
+				</a>
+			</div>
+
+			<div class="u-header-middle">
+				<a class="js-sidebar-invoker u-sidebar-invoker" href="#!"
+				   data-is-close-all-except-this="true"
+				   data-target="#sidebar">
+					<i class="fa fa-bars u-sidebar-invoker__icon--open"></i>
+					<i class="fa fa-times u-sidebar-invoker__icon--close"></i>
+				</a>
+
+			</div>
+
+			<div class="u-header-right">
+		  	<!-- User Profile -->
+				<div class="dropdown ml-2">
+				  <a class="link-muted d-flex align-items-center" href="#!" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+				    <img class="u-avatar--xs img-fluid rounded-circle mr-2" src="../../assets/trend.png" alt="User Profile">
+						<span class="text-dark d-none d-sm-inline-block">
+							Admin <small class="fa fa-angle-down text-muted ml-1"></small>
+						</span>
+				  </a>
+
+				  <div class="dropdown-menu dropdown-menu-right border-0 py-0 mt-3" aria-labelledby="dropdownMenuLink" style="width: 260px;">
+				  	<div class="card">
+							<div class="card-body">
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a class="d-flex align-items-center link-dark" href="/user/logout">
+											<span class="h3 mb-0"><i class="far fa-share-square text-muted mr-3"></i></span> Sign Out
+										</a>
+									</li>
+								</ul>
+							</div>
+				  	</div>
+				  </div>
+				</div>
+		  	<!-- End User Profile -->
+			</div>
+		</header>
+		<!-- End Header (Topbar) -->
+
+		<main class="u-main" role="main">
+			<!-- Sidebar -->
+			<aside id="sidebar" class="u-sidebar">
+				<div class="u-sidebar-inner">
+					<header class="u-sidebar-header">
+						<a class="u-sidebar-logo" href="/">
+							<img class="img-fluid" src="../../assets/trend.png" width="40" alt="Trending Dashboard">
+						</a>
+					</header>
+					<nav class="u-sidebar-nav">
+							<ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-job">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Job Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-directory">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Directory Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-accommodation">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Accommodation Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-admin">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Admin Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/subcribers">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Subcribers</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/jobs">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Jobs</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/directories">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Directories</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/accommodation">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Accommodation</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link active" href="/admin/trend/customer-care">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Customer Care</span>
+									</a>
+								</li>
+							</ul>
+					</nav>
+				</div>
+			</aside>
+			<!-- End Sidebar -->
+
+			<div class="u-content">
+				<div class="u-body">
+					<h1 class="h2 font-weight-semibold mb-4">Trending Subscriptions</h1>
+
+					{{# if profile.is_trender}}
+					<div class="card mb-4">
+						<header class="card-header">
+							<h2 class="h3 card-header-title">Customers Messages: {{contact.length}}</h2>
+						</header>
+
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col">FirstName</th>
+											<th scope="col">LastName</th>
+											<th scope="col">Cell Phone</th>
+											<th scope="col">Subject</th>
+											<th scope="col">Email Address</th>
+											<th scope="col">Message Inquiry</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										{{# each contact }}
+											<tr>
+												<td>{{this.firstname}}</td>
+												<td>{{this.lastname}}</td>
+												<td><a href="tel:{{this.cell}}">{{this.cell}}</a></td>
+												<td>{{this.subject}}</td>
+												<td><a href="mailto:{{this.email}}">{{this.email}}</a></td>
+												<td>{{this.message}}</td>
+											</tr>
+										{{/each}}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					{{else}}
+					<h3>You're Suspended</h3>
+					{{/if}}
+				</div>
+
+				<!-- Footer -->
+				<footer class="u-footer d-md-flex align-items-md-center text-center text-md-left text-muted text-muted">
+					<p class="h5 mb-0 ml-auto">
+						&copy; Trending News Company.
+					</p>
+				</footer>
+				<!-- End Footer -->
+			</div>
+		</main>
+
+		<!-- Global Vendor -->
+		<script src="../../assets/assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="../../assets/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+		<script src="../../assets/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+		<script src="../../assets/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+		<!-- Plugins -->
+		<script src="../../assets/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!-- Initialization  -->
+		<script src="../../assets/assets/js/sidebar-nav.js"></script>
+		<script src="../../assets/assets/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<!-- Head -->
+	<head>
+		<title>Create Account</title>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../assets/trend.png">
+
+		<!--  Social tags -->
+		<meta name="keywords" content="Trending Dash">
+		<meta name="description" content="Trending Dashboard UI Kit crafted by Trending.">
+		<meta name="author" content="traending.com">
+
+		<!-- Schema.org -->
+		<meta itemprop="name" content="Trending Dashboard UI Kit">
+		<meta itemprop="description" content="Trending Dashboard UI Kit crafted by Trending.">
+		<meta itemprop="image" content="assets/img/sduik-preview.png">
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@trending">
+		<meta name="twitter:title" content="Trending Dashboard UI Kit">
+		<meta name="twitter:description" content="Trending Dashboard UI Kit crafted by Trending.">
+		<meta name="twitter:creator" content="@trending">
+		<meta name="twitter:image" content="assets/img/sduik-preview.png">
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Trending">
+		<meta property="og:title" content="Trending Dashboard UI Kit">
+		<meta property="og:description" content="Trending Dashboard UI Kit crafted by Trending.">
+		<meta property="og:url" content="https://trendingzw.com/">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:image" content="assets/img/sduik-preview.png">
+		<meta property="og:image:secure_url" content="assets/img/sduik-preview.png">
+
+    <!-- Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+		<!-- Components Vendor Styles -->
+		<link rel="stylesheet" href="../../assets/assets/vendor/font-awesome/css/all.min.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="../../assets/assets/css/theme.css">
+	</head>
+	<!-- End Head -->
+
+	<body>
+		<main class="container-fluid w-100" role="main">
+			<div class="row">
+				<div class="col-lg-6 d-flex flex-column justify-content-center align-items-center bg-white mnh-100vh">
+					<a href="/" class="u-login-form py-3 mb-auto">
+						<h2 class="h2" style="font-family: inherit; color: red;">
+							<img class="logo" width="30px" src="../../assets/trend.png" />Trending
+						</h2>
+					</a>
+
+					<div class="u-login-form">
+						<div class="row">
+                <div class="col-sm-12">
+                  <div class="mb-3">
+                    {{#if hasErrors}}
+                      <div class="alert alert-danger">
+                        {{# each messages}}
+                          <p>{{this}}</p>
+                        {{/each}}
+                      </div>
+                    {{/if}}
+                  </div>
+                </div>
+            </div>
+						<form class="mb-3" action="/user/signup" method="post">
+							<div class="mb-3">
+								<h1 class="h2">Get Started</h1>
+							</div>
+
+							<div class="form-group mb-4">
+								<label for="firstname">First Name</label>
+								<input id="firstname" class="form-control" name="firstname" type="text" required placeholder="Enter your firstname">
+							</div>
+
+							<div class="form-group mb-4">
+								<label for="lastname">Last Name (optional for companies)</label>
+								<input id="lastname" class="form-control" name="lastname" type="text" placeholder="Enter your lastname">
+							</div>
+
+							<div class="form-group mb-4">
+								<label for="institution">City or Country</label>
+								<input id="institution" class="form-control" name="institution" type="text" placeholder="Enter your Country or City" required>
+							</div>
+
+							<div class="form-group mb-4">
+								<label for="cell">Phone Number</label>
+								<input id="cell" class="form-control" name="cell" type="text" placeholder="e.g +123 456 789" required>
+							</div>
+
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<label for="facebook">Facebook</label>
+										<input id="facebook" class="form-control" name="facebook" type="text" placeholder="paste link to your profile">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<label for="instagram">Instagram</label>
+										<input id="instagram" class="form-control" name="instagram" type="text" placeholder="paste link to your profile">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<label for="twitter">Twitter</label>
+										<input id="twitter" class="form-control" name="twitter" type="text" placeholder="paste link to your profile">
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<label for="linkedin">Linkedin</label>
+										<input id="linkedin" class="form-control" name="linkedin" type="text" placeholder="paste link to your profile">
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group mb-4">
+								<label for="email">Your email</label>
+								<input id="email" class="form-control" name="email" type="email" placeholder="e.g example@domain.com" required>
+							</div>
+
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<label for="password">Password</label>
+										<input id="password" class="form-control" name="password" type="password" placeholder="Enter your password" required>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="custom-control custom-checkbox mb-4">
+										<input id="rememberMe" type="checkbox" class="custom-control-input" onclick="showPassword()">
+										<label class="d-block custom-control-label" for="rememberMe">Show Password</label>
+									</div>
+									<script>
+										function showPassword() {
+											var password = document.getElementById("password");
+
+											if (password.type === "password") {
+												password.type = "text";
+											}
+											else {
+												password.type = "password";
+											}
+										}
+									</script>
+								</div>
+							</div>
+
+							<div class="mb-4">
+								<label class="d-block" > <b>By creating an account, I agree to the</b> <a href="/terms-and-conditions">terms &amp; conditions</a></label>
+							</div>
+
+							<input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+							<button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+						</form>
+
+						<p class="small">
+							Already have an account? <a href="/user/signin">Login here</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="col-lg-6 d-none d-lg-flex flex-column align-items-center justify-content-center bg-light">
+					<img class="img-fluid position-relative u-z-index-3 mx-5" src="../../assets/assets/svg/mockups/mockup.svg" alt="Image description">
+
+					<figure class="u-shape u-shape--top-right u-shape--position-5">
+						<img src="../../assets/assets/svg/shapes/shape-1.svg" alt="Image description">
+					</figure>
+					<figure class="u-shape u-shape--center-left u-shape--position-6">
+						<img src="../../assets/assets/svg/shapes/shape-2.svg" alt="Image description">
+					</figure>
+					<figure class="u-shape u-shape--center-right u-shape--position-7">
+						<img src="../../assets/assets/svg/shapes/shape-3.svg" alt="Image description">
+					</figure>
+					<figure class="u-shape u-shape--bottom-left u-shape--position-8">
+						<img src="../../assets/assets/svg/shapes/shape-4.svg" alt="Image description">
+					</figure>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

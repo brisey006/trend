@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<!-- Head -->
+	<head>
+		<title>Trending</title>
+
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="../../assets/trend.png">
+
+		<!--  Social tags -->
+    <meta name="keywords" content="Trending Dash">
+    <meta name="description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta name="author" content="trendingzw.com">
+
+    <!-- Schema.org -->
+    <meta itemprop="name" content="Trending Dashboard UI Kit">
+    <meta itemprop="description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta itemprop="image" content="assets/img/sduik-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@trending">
+    <meta name="twitter:title" content="Trending Dashboard UI Kit">
+    <meta name="twitter:description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta name="twitter:creator" content="@trending">
+    <meta name="twitter:image" content="assets/img/sduik-preview.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Trending">
+    <meta property="og:title" content="Trending Dashboard UI Kit">
+    <meta property="og:description" content="Trending Dashboard UI Kit crafted by Trending.">
+    <meta property="og:url" content="https://trendingzw.com/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="assets/img/sduik-preview.png">
+    <meta property="og:image:secure_url" content="assets/img/sduik-preview.png">
+
+    <!-- Web Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+		<!-- Components Vendor Styles -->
+	  <link rel="stylesheet" href="../../assets/assets/vendor/font-awesome/css/all.min.css">
+		<link rel="stylesheet" href="../../assets/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+		<!-- Theme Styles -->
+		<link rel="stylesheet" href="../../assets/assets/css/theme.css">
+
+		<!-- Custom Charts -->
+		<style>
+			.js-doughnut-chart {
+				width: 70px !important;
+				height: 70px !important;
+			}
+		</style>
+	</head>
+	<!-- End Head -->
+
+	<body>
+		<!-- Header (Topbar) -->
+		<header class="u-header">
+			<div class="u-header-left">
+				<a class="u-header-logo" href="/">
+					<img class="u-logo-desktop" src="../../assets/trend.png" width="40" height="40" alt="Trending Dashboard">
+					<img class="img-fluid u-logo-mobile" src="../../assets/trend.png" width="50" alt="Trending Dashboard">
+				</a>
+			</div>
+
+			<div class="u-header-middle">
+				<a class="js-sidebar-invoker u-sidebar-invoker" href="#!"
+				   data-is-close-all-except-this="true"
+				   data-target="#sidebar">
+					<i class="fa fa-bars u-sidebar-invoker__icon--open"></i>
+					<i class="fa fa-times u-sidebar-invoker__icon--close"></i>
+				</a>
+
+			</div>
+
+			<div class="u-header-right">
+		  	<!-- User Profile -->
+				<div class="dropdown ml-2">
+				  <a class="link-muted d-flex align-items-center" href="#!" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+				    <img class="u-avatar--xs img-fluid rounded-circle mr-2" src="../../assets/trend.png" alt="User Profile">
+						<span class="text-dark d-none d-sm-inline-block">
+							Admin <small class="fa fa-angle-down text-muted ml-1"></small>
+						</span>
+				  </a>
+
+				  <div class="dropdown-menu dropdown-menu-right border-0 py-0 mt-3" aria-labelledby="dropdownMenuLink" style="width: 260px;">
+				  	<div class="card">
+							<div class="card-body">
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a class="d-flex align-items-center link-dark" href="/user/logout">
+											<span class="h3 mb-0"><i class="far fa-share-square text-muted mr-3"></i></span> Sign Out
+										</a>
+									</li>
+								</ul>
+							</div>
+				  	</div>
+				  </div>
+				</div>
+		  	<!-- End User Profile -->
+			</div>
+		</header>
+		<!-- End Header (Topbar) -->
+
+		<main class="u-main" role="main">
+			<!-- Sidebar -->
+			<aside id="sidebar" class="u-sidebar">
+				<div class="u-sidebar-inner">
+					<header class="u-sidebar-header">
+						<a class="u-sidebar-logo" href="/">
+							<img class="img-fluid" src="../../assets/trend.png" width="40" alt="Trending Dashboard">
+						</a>
+					</header>
+
+					<nav class="u-sidebar-nav">
+							<ul class="u-sidebar-nav-menu u-sidebar-nav-menu--top-level">
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link active" href="/admin/trend/upload-job">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Job Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-directory">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Directory Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-accommodation">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Accommodation Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/upload-admin">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Admin Upload</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/subcribers">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Subcribers</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/jobs">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Jobs</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/directories">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Directories</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/accommodation">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Accommodation</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/customer-care">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Customer Care</span>
+									</a>
+								</li>
+							</ul>
+					</nav>
+				</div>
+			</aside>
+			<!-- End Sidebar -->
+
+			<div class="u-content">
+				<div class="u-body">
+					<!-- End Breadcrumb -->
+					<div class="mb-4">
+						<nav aria-label="breadcrumb">
+							<h1 class="h3">Upload Job</h1>
+						</nav>
+					</div>
+					<!-- End Breadcrumb -->
+
+					{{# if profile.is_trender}}
+					<form method="post" action="/admin/trend/upload-job" enctype="multipart/form-data">
+						<!-- Form Controls -->
+						<div class="row">
+							<div class="col-md-10 mb-4">
+								<div class="card">
+									<header class="card-header">
+										<h2 class="h3 card-header-title">Job Details</h2>
+									</header>
+
+									<div class="card-body">
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job Name</label>
+											<input id="name" class="form-control" type="text" name="title" required>
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Employer or Job Seeker Name</label>
+											<input id="company" class="form-control" type="text" name="company" required>
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job Location</label>
+											<input id="location" class="form-control" type="text">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job Salary</label>
+											<input id="salary" class="form-control" type="text" name="salary">
+										</div>
+
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Facebook Contact</label>
+											<input id="facebook" class="form-control" type="text" placeholder="facebook link" name="facebook">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Instagram Contact</label>
+											<input id="instagram" class="form-control" type="text" placeholder="instagram link" name="instagram">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Twitter Contact</label>
+											<input id="twitter" class="form-control" type="text" placeholder="twitter link" name="twitter">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Linkedin Contact</label>
+											<input id="linkedin" class="form-control" type="text" placeholder="linkedin link" name="linkedin">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Mobile Contact</label>
+											<input id="mobile" class="form-control" type="text" placeholder="mobile phone" name="mobile">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Email Contact</label>
+											<input id="email" class="form-control" type="text" placeholder="email link" name="email">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Website Contact</label>
+											<input id="website" class="form-control" type="text" placeholder="website link" name="website">
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job From</label>
+											<select class="form-control" id="type" name="type" required>
+												<option value>Choose Type</option>
+												<option value="Employer">Employer</option>
+												<option value="Job Seeker">Job Seeker</option>
+											</select>
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job Duration</label>
+											<select class="form-control" id="period" name="period" required>
+												<option value>Choose Job Duration</option>
+												<option value="Full-Time">Full-Time</option>
+												<option value="Part-Time">Part-Time</option>
+											</select>
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job Description</label>
+											<textarea  class="form-control" id="mytextarea" name="description"></textarea>
+										</div>
+
+										<div class="form-group mb-4">
+											<label for="defaultInput">Job Image</label>
+											<input id="image" class="form-control" type="file" name="image" required>
+										</div>
+
+										<div class="form-group mb-4">
+											<button type="submit" class="btn btn-primary" name="upload">Submit Job</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- End Form Controls -->
+
+					</form>
+					{{else}}
+					<h3>You're Suspended</h3>
+					{{/if}}
+
+				</div>
+
+				<!-- Footer -->
+				<footer class="u-footer d-md-flex align-items-md-center text-center text-md-left text-muted text-muted">
+					<p class="h5 mb-0 ml-auto">
+						&copy; Trending News Company.
+					</p>
+				</footer>
+				<!-- End Footer -->
+			</div>
+		</main>
+
+		<!-- Global Vendor -->
+		<script src="../../assets/assets/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="../../assets/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+		<script src="../../assets/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+		<script src="../../assets/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+		<script src="../../assets/assets/vendor/tinymce/tinymce.min.js"></script>
+		<script>
+			tinymce.init({
+			  selector: 'textarea#mytextarea',
+			  plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
+			  imagetools_cors_hosts: ['picsum.photos'],
+			  menubar: 'file edit view insert format tools table help',
+			  toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+			  toolbar_sticky: true,
+			  autosave_ask_before_unload: true,
+			  autosave_interval: "30s",
+			  autosave_prefix: "{path}{query}-{id}-",
+			  autosave_restore_when_empty: false,
+			  autosave_retention: "2m",
+			  image_advtab: true,
+			  content_css: '//www.tiny.cloud/css/codepen.min.css',
+			  link_list: [
+			    { title: 'My page 1', value: 'http://www.tinymce.com' },
+			    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+			  ],
+			  image_list: [
+			    { title: 'My page 1', value: 'http://www.tinymce.com' },
+			    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+			  ],
+			  image_class_list: [
+			    { title: 'None', value: '' },
+			    { title: 'Some class', value: 'class-name' }
+			  ],
+			  importcss_append: true,
+			  height: 400,
+			  file_picker_callback: function (callback, value, meta) {
+			    /* Provide file and text for the link dialog */
+			    if (meta.filetype === 'file') {
+			      callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+			    }
+
+			    /* Provide image and alt text for the image dialog */
+			    if (meta.filetype === 'image') {
+			      callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+			    }
+
+			    /* Provide alternative source and posted for the media dialog */
+			    if (meta.filetype === 'media') {
+			      callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+			    }
+			  },
+			  templates: [
+			        { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+			    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+			    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+			  ],
+			  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+			  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+			  height: 600,
+			  image_caption: true,
+			  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+			  noneditable_noneditable_class: "mceNonEditable",
+			  toolbar_mode: 'sliding',
+			  contextmenu: "link image imagetools table",
+			 });
+		</script>
+
+
+		<!-- Plugins -->
+		<script src="../../assets/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!-- Initialization  -->
+		<script src="../../assets/assets/js/sidebar-nav.js"></script>
+		<script src="../../assets/assets/js/main.js"></script>
+		<script type="text/javascript">
+			function addTag(){
+						 var myArray = [];
+						 let inputText = tag.value;
+						 myArray.push(inputText);
+						 console.log(myArray);
+				}
+		</script>
+	</body>
+</html>
