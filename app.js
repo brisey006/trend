@@ -31,7 +31,7 @@ app.set('view engine', '.hbs')
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Connect to mongodb
-mongoose.connect('mongodb://mongo:27017/trending',
+mongoose.connect('mongodb://trending_mongo:27017/trending',
  {
    useNewUrlParser: true,
     useCreateIndex: true,
@@ -93,7 +93,7 @@ app.use((err, res, next) => {
 });
 
 //Start Program
-const port = app.get('port') || 2000
+const port = app.get('port') || 5000
 app.listen(port, () => {
   console.log(`Server started sir on port ${port}`);
 });

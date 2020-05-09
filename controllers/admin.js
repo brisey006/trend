@@ -177,7 +177,9 @@ module.exports = {
 
        if (user.profile_image) {
          const imgpath = "./public/uploads/" + user.profile_image;
-         fs.unlinkSync(imgpath);
+         if (fs.existsSync(imgpath)) {
+          fs.unlinkSync(imgpath);
+         }
        }
 
        user.profile_image = req.file.filename;

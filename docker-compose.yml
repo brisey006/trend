@@ -1,0 +1,31 @@
+version: '3'
+services: 
+  app:
+    container_name: trendingapp
+    restart: always
+    build: .
+    links: 
+      - trending_mongo
+    volumes: 
+      - store:/usr/src/app/public/uploads
+      - node_modules:/usr/src/app/node_modules
+    networks:
+      - net
+    ports:
+      - '80:5000'
+  trending_mongo:
+    container_name: trending_mongo
+    image: mongo
+    volumes: 
+      - db:/data/db
+    networks: 
+      - net
+    ports:
+      - '27017'
+networks: 
+  net:
+    driver: bridge
+volumes: 
+  db:
+  store:
+  node_modules:
