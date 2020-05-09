@@ -12,7 +12,7 @@ services:
     networks:
       - net
     ports:
-      - '80:5000'
+      - '10000:5000'
   trending_mongo:
     container_name: trending_mongo
     image: mongo
