@@ -11,8 +11,6 @@ services:
       - node_modules:/usr/src/app/node_modules
     networks:
       - net
-    ports:
-      - '10000:5000'
   trending_mongo:
     container_name: trending_mongo
     image: mongo
