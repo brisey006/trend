@@ -12,61 +12,6 @@ module.exports = {
         const directories = await Dir.find({});
         const recents = await Dir.find({});
 
-        const articles = await Article.find({});
-
-        /*Tiles */
-        var world = [];
-        var covid = [];
-        var travel = [];
-        var sport = [];
-        var fashion = [];
-        var technology = [];
-        var science = [];
-        var lifestyle = [];
-        var politics = [];
-        var entertainment = [];
-        var business = [];
-        var culture = [];
-        for (var i = 0; i < articles.length; i++) {
-          if (articles[i].tile == 'World') {
-            world.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Sport') {
-            sport.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Fashion') {
-            fashion.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Technology') {
-            technology.push(articles[i]);
-          }
-          else if (articles[i].tile == 'LifeStyle') {
-            lifestyle.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Politics') {
-            politics.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Business') {
-            business.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Entertainment') {
-            entertainment.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Covid') {
-            covid.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Travel') {
-            travel.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Science') {
-            science.push(articles[i]);
-          }
-          else if (articles[i].tile == 'Culture') {
-            culture.push(articles[i]);
-          }
-        }
-        /*End Titles*/
-
         const socials = await Social.find({});
         var social;
 
@@ -77,19 +22,7 @@ module.exports = {
         res.render('directories', {
           dirs: directories.reverse(),
           social: social,
-          recents: recents.reverse(),
-          culture: culture.slice((culture.length - 3)).reverse(),
-          science: science.slice((science.length - 3)).reverse(),
-          travel: travel.slice((travel.length - 3)).reverse(),
-          covid: covid.slice((covid.length - 3)).reverse(),
-          world: world.slice((world.length - 3)).reverse(),
-          lifestyle: lifestyle.slice((lifestyle.length - 3)).reverse(),
-          sport: sport.slice((sport.length - 3)).reverse(),
-          technology: technology.slice((technology.length - 3)).reverse(),
-          fashion: fashion.slice((fashion.length - 3)).reverse(),
-          politics: politics.slice((politics.length - 3)).reverse(),
-          business: business.slice((business.length - 3)).reverse(),
-          entertainment: entertainment.slice((entertainment.length - 3)).reverse()
+          recents: recents.reverse()
         });
       } catch (err) {
         next(err)
@@ -101,60 +34,10 @@ module.exports = {
       const dirId = req.params.id;
       const dir = await Dir.findById(dirId);
       const dirs = await Dir.find({});
-      const articles = await Article.find({});
 
-      /*Tiles */
-      var world = [];
-      var covid = [];
-      var travel = [];
-      var sport = [];
-      var fashion = [];
-      var technology = [];
-      var science = [];
-      var lifestyle = [];
-      var politics = [];
-      var entertainment = [];
-      var business = [];
-      var culture = [];
-      for (var i = 0; i < articles.length; i++) {
-        if (articles[i].tile == 'World') {
-          world.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Sport') {
-          sport.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Fashion') {
-          fashion.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Technology') {
-          technology.push(articles[i]);
-        }
-        else if (articles[i].tile == 'LifeStyle') {
-          lifestyle.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Politics') {
-          politics.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Business') {
-          business.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Entertainment') {
-          entertainment.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Covid') {
-          covid.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Travel') {
-          travel.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Science') {
-          science.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Culture') {
-          culture.push(articles[i]);
-        }
+      if (!dir) {
+        return res.redirect('/page-not-found');
       }
-      /*End Titles*/
 
       dir.views++;
       await dir.save();
@@ -170,19 +53,7 @@ module.exports = {
        {
          dir: dir,
          social: social,
-         dirs: dirs.slice((dirs.length - 3)).reverse(),
-         culture: culture.slice((culture.length - 3)).reverse(),
-         science: science.slice((science.length - 3)).reverse(),
-         travel: travel.slice((travel.length - 3)).reverse(),
-         covid: covid.slice((covid.length - 3)).reverse(),
-         world: world.slice((world.length - 3)).reverse(),
-         lifestyle: lifestyle.slice((lifestyle.length - 3)).reverse(),
-         sport: sport.slice((sport.length - 3)).reverse(),
-         technology: technology.slice((technology.length - 3)).reverse(),
-         fashion: fashion.slice((fashion.length - 3)).reverse(),
-         politics: politics.slice((politics.length - 3)).reverse(),
-         business: business.slice((business.length - 3)).reverse(),
-         entertainment: entertainment.slice((entertainment.length - 3)).reverse()
+         dirs: dirs.slice((dirs.length - 3)).reverse()
         }
       );
     } catch (err) {
@@ -203,61 +74,6 @@ module.exports = {
         }
       }
 
-      const articles = await Article.find({});
-
-      /*Tiles */
-      var world = [];
-      var covid = [];
-      var travel = [];
-      var sport = [];
-      var fashion = [];
-      var technology = [];
-      var science = [];
-      var lifestyle = [];
-      var politics = [];
-      var entertainment = [];
-      var business = [];
-      var culture = [];
-      for (var i = 0; i < articles.length; i++) {
-        if (articles[i].tile == 'World') {
-          world.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Sport') {
-          sport.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Fashion') {
-          fashion.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Technology') {
-          technology.push(articles[i]);
-        }
-        else if (articles[i].tile == 'LifeStyle') {
-          lifestyle.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Politics') {
-          politics.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Business') {
-          business.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Entertainment') {
-          entertainment.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Covid') {
-          covid.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Travel') {
-          travel.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Science') {
-          science.push(articles[i]);
-        }
-        else if (articles[i].tile == 'Culture') {
-          culture.push(articles[i]);
-        }
-      }
-      /*End Titles*/
-
       const socials = await Social.find({});
       var social;
 
@@ -267,19 +83,7 @@ module.exports = {
 
       res.render('directories', {
         dirs: searchResult.reverse(),
-        social: social,
-        culture: culture.slice((culture.length - 3)).reverse(),
-        science: science.slice((science.length - 3)).reverse(),
-        travel: travel.slice((travel.length - 3)).reverse(),
-        covid: covid.slice((covid.length - 3)).reverse(),
-        world: world.slice((world.length - 3)).reverse(),
-        lifestyle: lifestyle.slice((lifestyle.length - 3)).reverse(),
-        sport: sport.slice((sport.length - 3)).reverse(),
-        technology: technology.slice((technology.length - 3)).reverse(),
-        fashion: fashion.slice((fashion.length - 3)).reverse(),
-        politics: politics.slice((politics.length - 3)).reverse(),
-        business: business.slice((business.length - 3)).reverse(),
-        entertainment: entertainment.slice((entertainment.length - 3)).reverse()
+        social: social
       });
     } catch (err) {
       next(err)

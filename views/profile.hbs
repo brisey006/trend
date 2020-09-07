@@ -86,7 +86,7 @@
 				  <a class="link-muted d-flex align-items-center" href="#!" role="button" id="dropdownMenuLink" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
 				    <img style="object-fit:cover" class="u-avatar--xs img-fluid rounded-circle mr-2" src="../../uploads/{{profile.profile_image}}" alt="User Profile">
 						<span class="text-dark d-none d-sm-inline-block">
-							{{profile.firstname}} <small class="fa fa-angle-down text-muted ml-1"></small>
+							{{profile.firstname}} {{profile.lastname}} <small class="fa fa-angle-down text-muted ml-1"></small>
 						</span>
 				  </a>
 
@@ -130,9 +130,30 @@
 							</li>
 
 							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="/edit-profile">
+									<i class="fa fa-edit u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Edit Account</span>
+								</a>
+							</li>
+
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="/edit-profile-image">
+									<i class="fa fa-edit u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Change Profile Image</span>
+								</a>
+							</li>
+
+							<li class="u-sidebar-nav-menu__item">
+								<a class="u-sidebar-nav-menu__link" href="/reset-password">
+									<i class="fa fa-edit u-sidebar-nav-menu__item-icon"></i>
+									<span class="u-sidebar-nav-menu__item-title">Change Password</span>
+								</a>
+							</li>
+
+							<li class="u-sidebar-nav-menu__item">
 								<a class="u-sidebar-nav-menu__link" href="/mbrisis/admin/upload-trending">
 									<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
-									<span class="u-sidebar-nav-menu__item-title">Upload Article</span>
+									<span class="u-sidebar-nav-menu__item-title">Add New Article</span>
 								</a>
 							</li>
 						</ul>
@@ -213,7 +234,7 @@
 							<div class="row">
 								{{# each articles}}
 									{{# if this.title}}
-									<div class="col-sm-6 col-lg-4  mb-md-0">
+									<div class="col-sm-6 col-lg-6  mb-md-0">
 										<div class="card mb-5">
 											<header class="card-header bg-light">
 												<div class="media align-items-center">
@@ -224,8 +245,8 @@
 													<!-- Card Header Icon -->
 													<ul class="list-inline ml-auto mb-0">
 														<li class="list-inline-item mr-3">
-															<a class="link-muted h3" href="/mbrisis/admin/delete-article/{{this._id}}">
-																<i class="fa fa-trash"></i>
+															<a class="link-muted h3 text-primary" href="/mbrisis/article/{{this._id}}">
+																Edit Article
 															</a>
 														</li>
 													</ul>

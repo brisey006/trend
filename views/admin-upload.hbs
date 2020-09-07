@@ -146,7 +146,7 @@
 								<li class="u-sidebar-nav-menu__item">
 									<a class="u-sidebar-nav-menu__link active" href="/admin/trend/upload-admin">
 										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
-										<span class="u-sidebar-nav-menu__item-title">Trending Admin Upload</span>
+										<span class="u-sidebar-nav-menu__item-title">Trending Advert Upload</span>
 									</a>
 								</li>
 
@@ -179,6 +179,13 @@
 								</li>
 
 								<li class="u-sidebar-nav-menu__item">
+									<a class="u-sidebar-nav-menu__link" href="/admin/trend/adverts">
+										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
+										<span class="u-sidebar-nav-menu__item-title">Trending Adverts</span>
+									</a>
+								</li>
+
+								<li class="u-sidebar-nav-menu__item">
 									<a class="u-sidebar-nav-menu__link" href="/admin/trend/customer-care">
 										<i class="fa fa-cubes u-sidebar-nav-menu__item-icon"></i>
 										<span class="u-sidebar-nav-menu__item-title">Customer Care</span>
@@ -195,11 +202,7 @@
 					<!-- End Breadcrumb -->
 					<div class="mb-4">
 						<nav aria-label="breadcrumb">
-							<h1 class="h3">Upload Article</h1>
-						  <ol class="breadcrumb bg-transparent small p-0">
-						    <li class="breadcrumb-item"><a href="/user/profile">My Articles</a></li>
-						    <li class="breadcrumb-item active" aria-current="page">Upload Trending</li>
-						  </ol>
+							<h1 class="h3">Upload Advert</h1>
 						</nav>
 					</div>
 					<!-- End Breadcrumb -->
@@ -211,69 +214,23 @@
 							<div class="col-md-11 mb-4">
 								<div class="card">
 									<header class="card-header">
-										<h2 class="h3 card-header-title">Article Details</h2>
+										<h2 class="h3 card-header-title">Advert Details</h2>
 									</header>
 
 									<div class="card-body">
 
 										<div class="form-group mb-4">
-											<label for="defaultInput">Article Title *</label>
-											<input id="title" class="form-control" type="text" name="title" required>
+											<label for="defaultInput">Advert Link</label>
+											<input id="link" class="form-control" placeholder="paste url link" type="text" name="link" required>
 										</div>
 
 										<div class="form-group mb-4">
-											<label for="defaultInput">Tag *</label>
-											<input id="article_tag" class="form-control" type="text" name="tag" required>
+											<label for="defaultInput">Advert Cover Image</label>
+											<input id="image" class="form-control" accept="image/*" type="file" name="image" required>
 										</div>
 
 										<div class="form-group mb-4">
-											<label for="defaultInput">Article Tile *</label>
-											<select class="form-control" id="tile" name="tile" required>
-												<option value>Choose Tile...</option>
-												<option value="Advertising">Advertising</option>
-												<option value="World">World News</option>
-												<option value="Covid">Covid-19 News</option>
-												<option value="Travel">Travel News</option>
-												<option value="Sport">Sporting News</option>
-												<option value="Fashion">Fashion News</option>
-												<option value="Technology">Tech News</option>
-												<option value="Science">Science News</option>
-												<option value="LifeStyle">Life News</option>
-												<option value="Politics">Politics News</option>
-												<option value="Business">Business News</option>
-												<option value="Entertainment">Entertainment</option>
-												<option value="Culture">Culture News</option>
-											</select>
-										</div>
-
-										<div class="form-group mb-4">
-											<label for="defaultInput">Article Category *</label>
-											<select class="form-control" id="category" name="category" required>
-												<option value>Choose Category...</option>
-												<option value="Advert">Advert</option>
-												<option value="Finance & Business">Finance & Business</option>
-												<option value="Latest">Latest News</option>
-												<option value="Covid19">Corona Virus News</option>
-												<option value="Video">Trending Video</option>
-												<option value="Breaking">Breaking News</option>
-												<option value="Food">Food & Nutrition</option>
-												<option value="Health">Healthy Living & LifeStyle</option>
-												<option value="Weekly">Weekly</option>
-												<option value="Events">Events</option>
-											</select>
-										</div>
-
-										<div class="form-group mb-4">
-											<textarea  class="form-control" id="mytextarea" name="description" rows="5"></textarea>
-										</div>
-
-										<div class="form-group mb-4">
-											<label for="defaultInput">Article Cover Image</label>
-											<input id="image" class="form-control" type="file" name="images" required>
-										</div>
-
-										<div class="form-group mb-4">
-											<button type="submit" class="btn btn-primary" name="upload">Submit Article</button>
+											<button type="submit" class="btn btn-primary" name="upload">Submit Advert</button>
 										</div>
 
 									</div>
@@ -304,68 +261,6 @@
 		<script src="../../assets/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
 		<script src="../../assets/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
 		<script src="../../assets/assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-		<script src="../../assets/assets/vendor/tinymce/tinymce.min.js"></script>
-		<script>
-			tinymce.init({
-			  selector: 'textarea#mytextarea',
-			  plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
-			  imagetools_cors_hosts: ['picsum.photos'],
-			  menubar: 'file edit view insert format tools table help',
-			  toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
-			  toolbar_sticky: true,
-			  autosave_ask_before_unload: true,
-			  autosave_interval: "30s",
-			  autosave_prefix: "{path}{query}-{id}-",
-			  autosave_restore_when_empty: false,
-			  autosave_retention: "2m",
-			  image_advtab: true,
-			  content_css: '//www.tiny.cloud/css/codepen.min.css',
-			  link_list: [
-			    { title: 'My page 1', value: 'http://www.tinymce.com' },
-			    { title: 'My page 2', value: 'http://www.moxiecode.com' }
-			  ],
-			  image_list: [
-			    { title: 'My page 1', value: 'http://www.tinymce.com' },
-			    { title: 'My page 2', value: 'http://www.moxiecode.com' }
-			  ],
-			  image_class_list: [
-			    { title: 'None', value: '' },
-			    { title: 'Some class', value: 'class-name' }
-			  ],
-			  importcss_append: true,
-			  height: 400,
-			  file_picker_callback: function (callback, value, meta) {
-			    /* Provide file and text for the link dialog */
-			    if (meta.filetype === 'file') {
-			      callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
-			    }
-
-			    /* Provide image and alt text for the image dialog */
-			    if (meta.filetype === 'image') {
-			      callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
-			    }
-
-			    /* Provide alternative source and posted for the media dialog */
-			    if (meta.filetype === 'media') {
-			      callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
-			    }
-			  },
-			  templates: [
-			        { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
-			    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
-			    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
-			  ],
-			  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-			  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-			  height: 600,
-			  image_caption: true,
-			  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
-			  noneditable_noneditable_class: "mceNonEditable",
-			  toolbar_mode: 'sliding',
-			  contextmenu: "link image imagetools table",
-			 });
-		</script>
 
 		<!-- Plugins -->
 		<script src="../../assets/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>

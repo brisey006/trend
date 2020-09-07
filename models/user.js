@@ -48,7 +48,9 @@ const userSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'article'
     }
-  ]
+  ],
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
 userSchema.methods.encryptPassword = (password) => {

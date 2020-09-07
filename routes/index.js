@@ -9,15 +9,23 @@ const JobController = require('../controllers/jobs');
 const AdminController = require('../controllers/admin');
 const DirectoryController = require('../controllers/directory');
 const AccommodationController = require('../controllers/accommodation');
+const UserController = require('../controllers/user');
 
 /*Start Trending Articles*/
 router.route('/')
   .get(ArticleController.index)
-  .post(ArticleController.addSubs)
+
+router.route('/reset-password')
+.get(UserController.getReset)
+.post(UserController.resetPassword)
+
+router.route('/reset/:token')
+.get(UserController.reset)
+.post(UserController.resetDone)
 
 router.route('/trending/:id')
   .get(ArticleController.getTrendingArticle)
-  .post(upload.single('image'),ArticleController.addTrendingComment)
+  .post(ArticleController.addTrendingComment)
 
 router.route('/trending-news')
   .get(ArticleController.getArticles)
@@ -33,13 +41,13 @@ router.route('/trender/:id')
 router.route('/trending-authors')
   .get(ArticleController.getAuthors)
 
-router.route('/trending-tag/:id')
+router.route('/trending-tag/:token')
   .get(ArticleController.getTags)
 
 /*End Trending Articles*/
 
 /*Start Tile Routes*/
-router.route('/world-news')
+router.route('/world')
   .get(ArticleController.getTiles)
 
 router.route('/covid-19')
@@ -48,13 +56,13 @@ router.route('/covid-19')
 router.route('/travel')
   .get(ArticleController.getTiles)
 
-router.route('/sport-news')
+router.route('/sports')
   .get(ArticleController.getTiles)
 
 router.route('/fashion')
   .get(ArticleController.getTiles)
 
-router.route('/tech-news')
+router.route('/technology')
   .get(ArticleController.getTiles)
 
 router.route('/science')
@@ -63,7 +71,7 @@ router.route('/science')
 router.route('/lifestyle')
   .get(ArticleController.getTiles)
 
-router.route('/business-news')
+router.route('/business')
   .get(ArticleController.getTiles)
 
 router.route('/politics')
@@ -138,6 +146,10 @@ router.route('/mbrisis/admin/upload-trending')
   .get(isLoggedIn,AdminController.getTrendingUpload)
   .post(upload.array('images'), AdminController.uploadTrending)
 
+router.route('/mbrisis/article/:id')
+  .get(isLoggedIn,AdminController.getTrendingArticle)
+  //.post(upload.array('images'), AdminController.editTrending)
+
 router.route('/edit-profile')
   .get(isLoggedIn, AdminController.getEditProfile)
   .post(AdminController.editProfile)
@@ -151,6 +163,9 @@ router.route('/mbrisis/admin/delete-article/:id')
 
 router.route('/mbrisis/admin/delete-job/:id')
   .get(isLoggedIn, AdminController.deleteJob)
+
+router.route('/mbrisis/admin/delete-advert/:id')
+  .get(isLoggedIn, AdminController.deleteAdvert)
 
 router.route('/mbrisis/admin/delete-dir/:id')
   .get(isLoggedIn, AdminController.deleteDir)
@@ -183,7 +198,7 @@ router.route('/admin/trend/subcribers')
 
 router.route('/admin/trend/upload-admin')
   .get(isLoggedIn,AdminController.getAdminUpload)
-  .post(upload.array('images'), AdminController.adminUploadTrending)
+  .post(upload.single('image'), AdminController.adminUploadTrending)
 
 router.route('/trend/admin/disable/:id')
   .get(AdminController.disableTrender)
@@ -193,6 +208,9 @@ router.route('/trend/admin/activate/:id')
 
 router.route('/admin/trend/jobs')
   .get(isLoggedIn,AdminController.getJobs)
+
+router.route('/admin/trend/adverts')
+  .get(isLoggedIn,AdminController.getAdverts)
 
 router.route('/admin/trend/directories')
   .get(isLoggedIn,AdminController.getDirectories)

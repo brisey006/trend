@@ -8,6 +8,7 @@ const Trending = require('../models/trending');
 const Social = require('../models/socials');
 const Contact = require('../models/contact');
 const Live = require('../models/live');
+const Advert = require('../models/advert');
 const Accommodation = require('../models/accommodation');
 const fs = require('fs');
 
@@ -65,6 +66,23 @@ module.exports = {
       next(err)
     }
   },
+
+  getTrendingArticle: async (req, res, next) => {
+    try {
+      const userId = req.session.passport.user;
+      const user = await User.findById(userId);
+
+      const articleId = req.params.id;
+      const article = await Article.findById(articleId);
+
+      res.render('admin-article', {
+        article: article,
+        profile: user
+      });
+    } catch (err) {
+      next(err)
+    }
+  },
   /* Begin Trending Upload  */
 
   getTrendingUpload: async (req, res, next) => {
@@ -81,7 +99,9 @@ module.exports = {
    try {
      const userId = req.session.passport.user;
      const user = await User.findById(userId);
-     const {tag, featured, tile,category, title, description, video_url} = req.body;
+     const {tile,category, title, description} = req.body;
+
+     var tags = req.body.tags.split('#');
 
      const images = [];
      var photos = req.files;
@@ -97,14 +117,12 @@ module.exports = {
      const author_name = user.firstname + " " + user.lastname;
 
      const article = new Article({
-       tag: tag,
+       tags: tags,
        tile: tile,
-       featured: featured,
        category: category,
        title: title,
        description: description,
        news_cover: req.files[0].filename,
-       video_url: video_url,
        news_images: images,
        date: created_at,
        views: views,
@@ -177,9 +195,7 @@ module.exports = {
 
        if (user.profile_image) {
          const imgpath = "./public/uploads/" + user.profile_image;
-         if (fs.existsSync(imgpath)) {
-          fs.unlinkSync(imgpath);
-         }
+         fs.unlinkSync(imgpath);
        }
 
        user.profile_image = req.file.filename;
@@ -293,43 +309,19 @@ module.exports = {
    try {
      const userId = req.session.passport.user;
      const user = await User.findById(userId);
-     const {tag,featured, tile,category, title, description, video_url} = req.body;
 
-     const images = [];
-     var photos = req.files;
+     const {link} = req.body;
 
-     for (var i = 0; i < photos.length; i++) {
-       images.push(photos[i].filename);
-     }
-
-     const views = 0;
-     const comments_count = 0;
      const date = Date.now();
      const created_at = new Date(date).toDateString();
-     const author_name = user.firstname + " " + user.lastname;
-
-     const article = new Article({
-       tag: tag,
-       tile: tile,
-       category: category,
-       title: title,
-       featured: featured,
-       description: description,
-       news_cover: req.files[0].filename,
-       video_url: video_url,
-       news_images: images,
+     
+     const advert = new Advert({
        date: created_at,
-       views: views,
-       author: userId,
-       author_name: author_name,
-       author_image: user.profile_image,
-       comments_count: comments_count
+       link: link,
+       image: req.file.filename
      });
 
-     article.comments;
-     await article.save();
-     user.articles.push(article);
-     await user.save();
+     await advert.save();
 
      res.redirect('back')
    } catch (err) {
@@ -379,7 +371,7 @@ module.exports = {
 
   uploadSocials: async (req, res, next) => {
     try {
-      const {facebook, twitter, linkedin, instagram, email, youtube, hq} = req.body;
+      const {facebook, twitter, trending, linkedin, instagram, email, youtube, hq} = req.body;
       var cells = req.body.cells.split('#');
 
       const socials = new Social({
@@ -388,6 +380,7 @@ module.exports = {
         linkedin: linkedin,
         instagram: instagram,
         email: email,
+        trending: trending,
         youtube: youtube,
         hq: hq,
         cells: cells
@@ -402,7 +395,7 @@ module.exports = {
 
   updateSocials: async (req, res, next) => {
     try {
-      const {facebook, twitter, linkedin, instagram, email, youtube,hq} = req.body;
+      const {facebook, twitter, trending, linkedin, instagram, email, youtube,hq} = req.body;
       var cells = req.body.cells.split('#');
       const socials = await Social.find({});
       var social;
@@ -415,6 +408,7 @@ module.exports = {
         social.twitter = twitter;
         social.linkedin = linkedin;
         social.instagram = instagram;
+        social.trending = trending;
         social.email = email;
         social.youtube = youtube;
         social.hq = hq;
@@ -489,6 +483,35 @@ module.exports = {
 
       const jobs = await Job.find({});
       res.render('admin-jobs', {jobs: jobs.reverse(), profile: user});
+    } catch (err) {
+      next(err)
+    }
+  },
+
+  getAdverts: async (req, res, next) => {
+    try {
+      const userId = req.session.passport.user;
+      const user = await User.findById(userId);
+
+      const adverts = await Advert.find({});
+
+      res.render('admin-adverts', {adverts: adverts.reverse(), profile: user});
+    } catch (err) {
+      next(err)
+    }
+  },
+
+  deleteAdvert: async (req, res, next) => {
+    try {
+      const advertId = req.params.id;
+      const advert = await Advert.findById(advertId);
+
+      const imgpath = "./public/uploads/" + advert.image;
+      fs.unlinkSync(imgpath);
+
+      await Advert.findByIdAndDelete(advertId);
+
+      res.redirect('back');
     } catch (err) {
       next(err)
     }

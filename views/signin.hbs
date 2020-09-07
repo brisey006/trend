@@ -66,7 +66,7 @@
               <div class="col-sm-12">
                 <div class="mb-3">
                   {{#if hasErrors}}
-                    <div class="alert alert-danger">
+                    <div class="text-white alert alert-danger">
                       {{# each messages}}
                         <p>{{this}}</p>
                       {{/each}}
@@ -97,7 +97,7 @@
 									<label class="custom-control-label" for="rememberMe">Remember me</label>
 								</div>
 
-								<a class="link-muted small" href="mailto:trendingnhasi@gmail.com">Forgot Password?</a>
+								<a class="link-muted small" href="/reset-password">Forgot Password?</a>
 							</div>
 
 							<input type="hidden" name="_csrf" value="{{csrfToken}}">
@@ -111,7 +111,7 @@
 					</div>
 
 					<div class="u-login-form text-muted py-3 mt-auto">
-						<small><i class="far fa-question-circle mr-1"></i> If you are not able to sign in, please <a href="mailto:mbrisisthismyhood@gmail.com">contact us</a>.</small>
+						<small><i class="far fa-question-circle mr-1"></i> If you are not able to sign in, please <a href="/contact">contact us</a>.</small>
 					</div>
 				</div>
 

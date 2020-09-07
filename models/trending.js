@@ -33,6 +33,7 @@ const schema = new Schema({
   comments_count: Number,
   views: Number,
   tag: String,
+  tags: Array,
   tile: String,
   author: {
     type: String,

@@ -117,8 +117,8 @@
 					<div class="mb-4">
 						<nav aria-label="breadcrumb">
 						  <ol class="breadcrumb bg-transparent small p-0">
-						    <li class="breadcrumb-item"><a href="/user/profile">My Articles</a></li>
-						    <li class="breadcrumb-item active" aria-current="page">Upload Trending</li>
+						    <li class="breadcrumb-item"><a href="/user/profile">Dashboard</a></li>
+						    <li class="breadcrumb-item active" aria-current="page">Upload New Article</li>
 						  </ol>
 						</nav>
 					</div>
@@ -141,8 +141,8 @@
 										</div>
 
 										<div class="form-group mb-4">
-											<label for="defaultInput">Tag *</label>
-											<input id="article_tag" class="form-control" type="text" name="tag" required>
+											<label for="defaultInput">Tags</label>
+											<input id="tags" placeholder="e.g #trending #life #news #blog" class="form-control" type="text" name="tags">
 										</div>
 
 										<div class="form-group mb-4">
@@ -176,7 +176,7 @@
 												<option value="Food">Food & Nutrition</option>
 												<option value="Health">Healthy Living & LifeStyle</option>
 												<option value="Weekly">Weekly</option>
-												<option value="Events">Events</option>
+												<option value="Other">Other</option>
 											</select>
 										</div>
 
@@ -187,7 +187,7 @@
 
 										<div class="form-group mb-4">
 											<label for="defaultInput">Article Cover *</label>
-											<input id="image" class="form-control" type="file" name="images" required>
+											<input id="image" class="form-control" accept="image/*" type="file" name="images" required>
 										</div>
 
 										<div class="form-group mb-4">
